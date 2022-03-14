@@ -40,6 +40,11 @@ Route.post('/login', async ({ auth, request, response }) => {
   }
 })
 
+Route.post('/logout', async ({ auth, response }) => {
+  await auth.use('web').logout()
+  response.redirect('/login')
+})
+
 Route.resource('/users', 'UsersController')
 
 Route.get('/dashboard', async ({ view }) => {
