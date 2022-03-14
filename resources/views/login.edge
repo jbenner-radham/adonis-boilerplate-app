@@ -1,0 +1,55 @@
+@layout('layouts/main')
+@set('title', 'Login')
+
+@section('body')
+  <main class="login">
+    <h1>Login</h1>
+
+    <form class="form" action="/login" method="POST">
+        <label class="form__label" for="form__email">Email</label>
+        <input
+            id="form__email"
+            name="email"
+            placeholder="j.doe@example.com"
+            type="email"
+            autofocus
+            required
+        >
+
+        <label class="form__label" for="form__password">Password</label>
+        <input
+            id="form__password"
+            name="password"
+            placeholder="secret"
+            type="password"
+            required
+        >
+
+        <br>
+
+        <button class="form__button--submit" type="submit">
+            Log In
+        </button>
+    </form>
+  </main>
+
+  <style>
+    .form__button--submit {
+      margin-top: .75rem;
+    }
+
+    .form__label {
+      display: block;
+      font-weight: bolder;
+      margin-bottom: .5rem;
+    }
+
+    .form__label:first-of-type {
+      margin-top: .75rem;
+    }
+
+    .form__label:not(:first-of-type) {
+      margin-top: .5rem;
+    }
+  </style>
+@end
