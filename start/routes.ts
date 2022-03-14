@@ -39,3 +39,5 @@ Route.post('/login', async ({ auth, request, response }) => {
     return response.badRequest('Invalid credentials')
   }
 })
+
+Route.resource('/users', 'UsersController')
