@@ -41,3 +41,7 @@ Route.post('/login', async ({ auth, request, response }) => {
 })
 
 Route.resource('/users', 'UsersController')
+
+Route.get('/dashboard', async ({ view }) => {
+  return view.render('dashboard')
+}).middleware('auth')
