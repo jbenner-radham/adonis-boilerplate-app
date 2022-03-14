@@ -1,0 +1,11 @@
+@layout('layouts/main')
+@set('title', 'Dashboard')
+
+@section('body')
+  <main class="dashboard">
+    <h1>Dashboard</h1>
+    @if(auth.isLoggedIn)
+      <p>Hello {{ auth.user.email }}</p>
+    @end
+  </main>
+@end
